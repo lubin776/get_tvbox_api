@@ -1,37 +1,102 @@
-# 接口备份项目
+# 海量接口搬运备份
 
-#### 介绍
-这是一个仓库
+纯静态 TVBox 接口列表网页 + GitHub Actions 自动抓取 + Cloudflare Pages 一键部署。
 
-#### 软件架构
-软件架构说明
+## ✨ 功能特性
 
+- 🤖 **全自动抓取**：每两日自动运行脚本，抓取最新 TVBox 接口并备份
+- 📄 **纯静态网页**：无需后端，直接读取 `list.txt` 渲染接口列表
+- 🔍 **即时搜索**：前端实时过滤接口名称
+- 📋 **一键复制**：支持备份一线 / 二线 / 三线多域名链接一键复制
+- 🚀 **零成本部署**：Cloudflare Pages 全免费托管
+- 🔧 **零代码维护**：所有代码已就绪，只需 Fork + 部署
 
-#### 安装教程
+## 📁 项目结构
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+├── .github/workflows/daily.yml   # 每两日自动运行工作流（已配置权限）
+├── tvbox_get_api.py              # 抓取脚本（无需修改）
+├── api_list.json                 # 接口配置模板（可按需增删）
+├── index.html                    # 网页入口（已适配移动端，无需修改）
+├── list.txt                      # 自动生成，接口数据（网页数据源）
+├── tvbox/                        # 自动生成，备份的 JSON 接口文件
+└── user/
+    └── SUMMARY.txt               # 自动生成，每次运行报告
 
-#### 使用说明
+## 🚀 快速部署
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+### 第一步：部署到 Cloudflare Pages
 
-#### 参与贡献
+1. 将本仓库推送到你的 GitHub（或 Fork）
+2. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Pages** → **创建项目**
+3. 连接 GitHub 仓库，选择本项目
+4. 构建设置保持如下：
+   - **构建命令**：`留空`
+   - **输出目录**：`/`（根目录）
+   - **环境变量**：无需添加
+5. 点击 **保存并部署**
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+部署完成后，访问分配的 `*.pages.dev` 域名即可看到网页，所有接口链接均已生效。
 
+### 第二步：开启 Actions 自动更新权限
 
-#### 特技
+为了让工作流能自动提交抓取结果，需要开启仓库写权限：
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1. 进入仓库 → **Settings** → **Actions** → **General**
+2. **Workflow permissions** 区域 → 勾选 ✅ **Read and write permissions**
+3. 点击 **Save**
+
+开启后，工作流会**每两日自动运行一次**（北京时间约 00:05 触发，奇偶日控制），抓取最新接口 → 更新 `list.txt` 和 `tvbox/` → 自动提交 → CF Pages 检测到推送后自动重新部署。
+
+> 💡 你也可以随时进入仓库的 **Actions** 选项卡，点击 **每两日自动运行** → **Run workflow** 手动触发。
+
+## ⚙️ 自定义接口配置
+
+编辑根目录的 `api_list.json`，按格式修改即可：
+
+{
+  "API_LIST": [
+    {"name": "接口显示名称", "url": "接口实际地址"}
+  ],
+  "API_MIRRORS": {
+    "接口显示名称": ["镜像地址1", "镜像地址2"]
+  }
+}
+
+修改后提交推送，下次工作流运行时会自动读取新配置。
+
+## 🛠️ 本地运行（调试/预览）
+
+# 安装依赖
+pip install requests
+
+# 正常抓取（生成 list.txt + tvbox/）
+python tvbox_get_api.py
+
+# 调试模式（输出详细日志）
+python tvbox_get_api.py --debug
+
+# 仅检查配置是否正确（不抓取）
+python tvbox_get_api.py --check-config
+
+本地运行后直接用浏览器打开 `index.html` 即可预览网页效果。
+
+## 📱 网页功能说明
+
+| 功能 | 说明 |
+|------|------|
+| **搜索** | 顶部搜索框实时过滤接口名称 |
+| **多线链接** | 每个接口提供备份一线 / 二线 / 三线三个域名 |
+| **一键复制** | 点击「复制」按钮自动写入剪贴板 |
+| **动态日期** | 页面加载时自动获取北京时间显示 |
+| **置顶推荐** | 菠菜园、少儿频道固定置顶展示 |
+
+## ⚠️ 注意事项
+
+- 本项目所有资源均来自互联网，仅供**测试学习**使用
+- 请勿用于违法及商业用途，请勿付费购买
+- 如涉及侵权，请联系删除
+- 三个备份域名已硬编码在 `index.html` 中，如需更换请自行编辑（代码可改，非强制）
+
+## 📄 License
+
+MIT
