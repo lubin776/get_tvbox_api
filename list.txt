@@ -1,8 +1,8 @@
-饭太硬.json|20260907|16.8K|http://www.饭太硬.net/tv
-嗷呜.json|20260907|22.8K|http://www.英格里希嗷呜.top/tv
-肥猫.json|20260907|13.2K|http://肥猫.net/tv
-肥猫2线.json|20260907|51.1K|https://jk.catvod.site
-王二小.json|20260907|24.1K|https://9280.kstore.vip/aiwex.json
-集多.json|20260907|24.6K|http://rihou.cc:88/demo.php
-摸鱼.json|20260907|30.3K|https://6800.kstore.vip/fish.json
-南风.json|20260907|55.1K|https://ghproxy.monkeyray.net/raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json
+饭太硬.json|20260908|16.8K|http://www.饭太硬.net/tv
+嗷呜.json|20260908|22.8K|http://www.英格里希嗷呜.top/tv
+肥猫.json|20260908|13.2K|http://肥猫.net/tv
+肥猫2线.json|20260908|51.1K|https://jk.catvod.site
+王二小.json|20260908|24.1K|https://9280.kstore.vip/aiwex.json
+集多.json|20260908|24.6K|http://rihou.cc:88/demo.php
+摸鱼.json|20260908|30.3K|https://6800.kstore.vip/fish.json
+南风.json|20260908|55.1K|https://ghproxy.monkeyray.net/raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json
