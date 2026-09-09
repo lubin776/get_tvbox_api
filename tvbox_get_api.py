@@ -481,10 +481,10 @@ def resolve_url(rel_path, base_url):
 
 
 # ======================================================================
-# ★ 修复后的 absolutize_json —— 递归处理 ext 对象中的相对路径
+# ★ 重写后的 absolutize_json —— 仅处理 spider/logo/sites，极简路径判断
 # ======================================================================
 def absolutize_json(text, source_url):
-    """将 JSON 中的所有相对 URL 转换为绝对 URL"""
+    """将 JSON 中 spider/logo/sites 的相对 URL 转换为绝对 URL"""
     if not source_url:
         return text
     try:
@@ -496,14 +496,10 @@ def absolutize_json(text, source_url):
     if not base:
         return text
 
-    top_url_fields = {
-        "spider", "wallpaper", "homeLogo", "homeBg",
-        "homeSite", "livePlayHeaders", "logo", "homeSearch",
-        "homeRec", "md5"
-    }
+    from urllib.parse import urljoin
 
-    spider_prefixes = ("csp_", "json_", "nodejs_", "py_", "js_", "http_")
-
+    # ★ 极简判断：非绝对地址 且 包含路径分隔符（如 ./ 或 /）才视为相对路径
+    # 效果："./config.json" 会转换；"Demo"、"ijk" 等不含 / 的标识符绝不转换
     def should_resolve(val):
         if not val or not isinstance(val, str):
             return False
@@ -512,16 +508,13 @@ def absolutize_json(text, source_url):
             return False
         if val.startswith(("http://", "https://", "data:", "file://", "//")):
             return False
-        if any(val.startswith(p) for p in spider_prefixes):
-            return False
-        if val.isdigit():
-            return False
-        return True
+        # 核心：必须有路径分隔符才算相对路径
+        return "/" in val
 
     def resolve_if_needed(val):
-        return resolve_url(val, base) if should_resolve(val) else val
+        return urljoin(base, val) if should_resolve(val) else val
 
-    # ★★★ 递归处理 ext 对象 ★★★
+    # ★ 递归处理 ext 对象（字符串 / 数组 / 嵌套字典）
     def resolve_ext_object(ext):
         if isinstance(ext, str):
             return resolve_if_needed(ext)
@@ -538,58 +531,29 @@ def absolutize_json(text, source_url):
         return ext
 
     if isinstance(obj, dict):
-        # 顶层字段
-        for field in top_url_fields:
-            if field in obj and should_resolve(obj[field]):
-                obj[field] = resolve_url(obj[field], base)
+        # ★ 1. 仅处理顶层 spider 和 logo（支持字符串或数组形式）
+        for key in ("spider", "logo"):
+            if key in obj:
+                val = obj[key]
+                if isinstance(val, str):
+                    obj[key] = resolve_if_needed(val)
+                elif isinstance(val, list):
+                    obj[key] = [resolve_if_needed(v) if isinstance(v, str) else v for v in val]
 
-        # sites
+        # ★ 2. 仅处理 sites 列表
         if "sites" in obj and isinstance(obj["sites"], list):
             for site in obj["sites"]:
                 if not isinstance(site, dict):
                     continue
-
-                # ★★★ 关键修复：递归处理 ext（字符串 or 对象） ★★★
+                # 递归处理 ext
                 if "ext" in site:
                     site["ext"] = resolve_ext_object(site["ext"])
-
-                for field in ("jar", "playUrl", "logo", "url", "epg"):
+                # 处理站点常见 URL 字段
+                for field in ("jar", "playUrl", "logo", "url", "epg", "api"):
                     if field in site and should_resolve(site[field]):
-                        site[field] = resolve_url(site[field], base)
-
-                if "api" in site and isinstance(site["api"], str):
-                    api_val = site["api"].strip()
-                    if _looks_like_url(api_val) and should_resolve(api_val):
-                        site["api"] = resolve_url(api_val, base)
-
-        # lives
-        if "lives" in obj and isinstance(obj["lives"], list):
-            for live in obj["lives"]:
-                if not isinstance(live, dict):
-                    continue
-                for field in ("url", "logo", "epg", "playUrl"):
-                    if field in live and should_resolve(live[field]):
-                        live[field] = resolve_url(live[field], base)
-
-        # parses
-        if "parses" in obj and isinstance(obj["parses"], list):
-            for parse in obj["parses"]:
-                if not isinstance(parse, dict):
-                    continue
-                for field in ("url", "logo"):
-                    if field in parse and should_resolve(parse[field]):
-                        parse[field] = resolve_url(parse[field], base)
-
-        # rules
-        if "rules" in obj and isinstance(obj["rules"], list):
-            for rule in obj["rules"]:
-                if not isinstance(rule, dict):
-                    continue
-                if "url" in rule and should_resolve(rule["url"]):
-                    rule["url"] = resolve_url(rule["url"], base)
+                        site[field] = urljoin(base, site[field])
 
     return json.dumps(obj, ensure_ascii=False, indent=2)
-
 
 def _looks_like_url(value):
     if not value:
@@ -680,13 +644,13 @@ def update_list_txt(results, path=LIST_TXT):
     """
     ★★★ 新旧 list 合并（脚本运行时的核心逻辑）★★★
 
-    ★ 只收集【成功爬取 JSON】的条目；爬取失败（TEXT / TIMEOUT / FAILED）的
+    ★ 只收集【成功爬取 JSON 或 TEXT】的条目；爬取失败（TIMEOUT / FAILED）的
        一律不写入 list.txt，也不影响旧条目。
 
     流程：
     1. 先读取【旧的 list.txt】→ old 字典（key = file_name 条目名）
        （旧 list 里的条目都曾是成功过的，天然符合"只收成功"原则）
-    2. 遍历本次 results，【仅 ok=True（=status JSON）】的条目参与合并：
+    2. 遍历本次 results，【仅 ok=True（=status JSON 或 TEXT）】的条目参与合并：
        - 新条目成功(ok) + 旧有同名 → 新替代旧（日期=今天、尺寸、成功URL）
        - 新条目成功(ok) + 旧无同名 → 新增一条
        - 新条目失败(!ok)           → 直接跳过，不写 list，不动旧条目
@@ -1041,7 +1005,7 @@ def process(name, urls) -> dict:
     print(f"  {'~'*50}")
     return {
         "name": name, "status": status, "file": path, "ua": ua,
-        "ok": status == "JSON", "note": _note_of(name),
+        "ok": status in ("JSON", "TEXT"), "note": _note_of(name),  # ★ 修改：TEXT 也视为成功
         "bytes": len(formatted), "time_ms": elapsed_ms, "success_url": success_url,
     }
 
