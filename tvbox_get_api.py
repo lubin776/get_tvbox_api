@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TVBox 接口一键抓取工具
+TVBox 接口一键抓取json工具
 """
 
 import re
