@@ -238,7 +238,7 @@
         "cookie": "",
         "filters": "http://rihou.cc:88/json/guanying.json",
         "sites": "https://www.xn--wcv59z.com,https://www.xn--74qz10cqsltibh40akss.com,https://www.xn--dpqv20e8ug6r8a.com,https://www.xn--10vr61a3xc5x3b.com,https://www.xn--kivn76b41nnhi.com",
-        "proxy": "http://rihou.cc:88/noproxy"
+        "proxy": "noproxy"
       }
     },
     {
@@ -253,7 +253,7 @@
         "cookie": "",
         "filters": "http://rihou.cc:88/json/pinglian.json",
         "sites": "https://pinglian.lol",
-        "proxy": "http://rihou.cc:88/noproxy"
+        "proxy": "noproxy"
       }
     },
     {
@@ -379,7 +379,7 @@
       "ext": {
         "sites": "https://woggpan.xxooo.cf",
         "filters": "http://rihou.cc:88/json/wogg.json",
-        "proxy": "http://rihou.cc:88/noproxy"
+        "proxy": "noproxy"
       }
     },
     {
@@ -394,7 +394,7 @@
       "ext": {
         "sites": "https://woog.nxog.eu.org",
         "filters": "http://rihou.cc:88/json/wogg2.json",
-        "proxy": "http://rihou.cc:88/noproxy"
+        "proxy": "noproxy"
       }
     },
     {
@@ -409,7 +409,7 @@
       "ext": {
         "sites": "http://tvpanpan.site",
         "filters": "http://rihou.cc:88/json/wogg2.json",
-        "proxy": "http://rihou.cc:88/noproxy"
+        "proxy": "noproxy"
       }
     },
     {
@@ -424,7 +424,7 @@
       "ext": {
         "sites": "http://shandian.blog",
         "filters": "http://rihou.cc:88/json/wogg2.json",
-        "proxy": "http://rihou.cc:88/noproxy"
+        "proxy": "noproxy"
       }
     },
     {
@@ -439,7 +439,7 @@
       "ext": {
         "sites": "https://www.wexwp.cc",
         "filters": "http://rihou.cc:88/json/wogg2.json",
-        "proxy": "http://rihou.cc:88/noproxy"
+        "proxy": "noproxy"
       }
     },
     {
@@ -454,7 +454,7 @@
       "ext": {
         "sites": "https://123.666291.xyz",
         "filters": "http://rihou.cc:88/json/wogg2.json",
-        "proxy": "http://rihou.cc:88/noproxy"
+        "proxy": "noproxy"
       }
     },
     {
@@ -469,7 +469,7 @@
       "ext": {
         "sites": "https://www.mihdr.top",
         "filters": "http://rihou.cc:88/json/wogg2.json",
-        "proxy": "http://rihou.cc:88/noproxy"
+        "proxy": "noproxy"
       }
     },
     {
@@ -484,7 +484,7 @@
       "ext": {
         "sites": "https://tv.yydsys.top/",
         "filters": "http://rihou.cc:88/json/wogg2.json",
-        "proxy": "http://rihou.cc:88/noproxy"
+        "proxy": "noproxy"
       }
     },
     {
@@ -499,7 +499,7 @@
       "ext": {
         "sites": "http://38.76.197.172:16969",
         "filters": "http://rihou.cc:88/json/wogg2.json",
-        "proxy": "http://rihou.cc:88/noproxy"
+        "proxy": "noproxy"
       }
     },
     {
@@ -514,7 +514,7 @@
       "ext": {
         "sites": "http://38.76.197.172:12521",
         "filters": "http://rihou.cc:88/json/wogg2.json",
-        "proxy": "http://rihou.cc:88/noproxy"
+        "proxy": "noproxy"
       }
     },
     {
@@ -582,7 +582,7 @@
       "api": "csp_AppGet",
       "ext": {
         "host": "https://miget-1313189639.cos.ap-guangzhou.myqcloud.com/mifun.txt",
-        "datakey": "http://rihou.cc:88/GETMIFUNGEIMIFUN"
+        "datakey": "GETMIFUNGEIMIFUN"
       }
     },
     {
@@ -604,7 +604,7 @@
       "api": "csp_AppGet",
       "ext": {
         "host": "https://app.95112475.xyz",
-        "datakey": "http://rihou.cc:88/5a9w6x58dsq6z3a6"
+        "datakey": "5a9w6x58dsq6z3a6"
       }
     },
     {
@@ -973,12 +973,12 @@
       "timeout": 60,
       "ext": {
         "include": [
-          "http://rihou.cc:88/HDR",
-          "http://rihou.cc:88/高码"
+          "HDR",
+          "高码"
         ],
         "exclude": [
-          "http://rihou.cc:88/预告",
-          "http://rihou.cc:88/花絮"
+          "预告",
+          "花絮"
         ]
       }
     },

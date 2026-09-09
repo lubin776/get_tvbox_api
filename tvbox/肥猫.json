@@ -40,7 +40,7 @@
           "chunksize": 512,
           "threads": 16
         },
-        "url_key": "http://肥猫.net/FeiMaoUC"
+        "url_key": "FeiMaoUC"
       }
     },
     {
@@ -61,7 +61,7 @@
           "chunksize": 512,
           "threads": 16
         },
-        "url_key": "http://肥猫.net/Duopan2"
+        "url_key": "Duopan2"
       }
     },
     {
@@ -78,7 +78,7 @@
           "https://www.mihdr.top",
           "https://www.miqk.cc"
         ],
-        "url_key": "http://肥猫.net/Netfixtv2",
+        "url_key": "Netfixtv2",
         "threadinfo": {
           "chunksize": 512,
           "threads": 16
@@ -412,12 +412,12 @@
     {
       "name": "Json聚合",
       "type": 3,
-      "url": "http://肥猫.net/Demo"
+      "url": "Demo"
     },
     {
       "name": "Web聚合",
       "type": 3,
-      "url": "http://肥猫.net/Web"
+      "url": "Web"
     },
     {
       "name": "qiyi[官源]",

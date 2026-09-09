@@ -1,5 +1,5 @@
 {
-  "spider": "https://nos.netease.com/ysf/fa273578c0dc287266bd5dce5eae7082.png;md5;249047fab983b2fe5d716c2ea80a3c47",
+  "spider": "https://zl.wpscdn.cn/2026/09/09/space_img/3ef1e1c2-ba7d-4efc-a7c1-a52376c53b33.png;md5;42640332f373e640bc2945126324569f",
   "logo": "https://file.icve.com.cn/file_doc/945/35/EC508FBD046D33EC4832BB76B63B6C94.gif",
   "wallpaper": "http://127.0.0.1:9978/proxy?do=AowuWapper&mode=2",
   "sites": [
@@ -12,17 +12,17 @@
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/Douban"
+      "ext": "Douban"
     },
     {
-      "name": "更新日期:【20260906】",
+      "name": "更新日期:【20260909】",
       "key": "Y360",
       "type": 3,
       "api": "csp_Y360Amns",
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/Y360"
+      "ext": "Y360"
     },
     {
       "name": "🔥短剧┃推荐",
@@ -33,7 +33,7 @@
       "quickSearch": 1,
       "changeable": 0,
       "genre": "shortdrama",
-      "ext": "http://www.英格里希嗷呜.top/Hgdh"
+      "ext": "Hgdh"
     },
     {
       "name": "⚙️配置┃中心",
@@ -61,7 +61,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/woWogg"
+      "ext": "woWogg"
     },
     {
       "name": "💥木偶┃4K",
@@ -71,7 +71,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/moWobg"
+      "ext": "moWobg"
     },
     {
       "name": "⭐夏天┃秒播",
@@ -81,7 +81,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/NewGrV2"
+      "ext": "NewGrV2"
     },
     {
       "name": "⭐韩剧┃秒播",
@@ -100,7 +100,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/Guazi"
+      "ext": "Guazi"
     },
     {
       "name": "📦①线┃秒播",
@@ -110,7 +110,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/AppV7Fz"
+      "ext": "AppV7Fz"
     },
     {
       "name": "📦②线┃秒播",
@@ -120,7 +120,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/AppV7Xy"
+      "ext": "AppV7Xy"
     },
     {
       "name": "📦③线┃秒播",
@@ -130,7 +130,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/AppV7Zjdr"
+      "ext": "AppV7Zjdr"
     },
     {
       "name": "📦④线┃秒播",
@@ -140,7 +140,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/AppV7Xyz"
+      "ext": "AppV7Xyz"
     },
     {
       "name": "📦⑤线┃秒播",
@@ -150,7 +150,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/AppV7Xnm"
+      "ext": "AppV7Xnm"
     },
     {
       "name": "📦⑥线┃秒播",
@@ -160,7 +160,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/AppV7Mtq"
+      "ext": "AppV7Mtq"
     },
     {
       "name": "📦⑦线┃秒播",
@@ -170,7 +170,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/AppV7Llq"
+      "ext": "AppV7Llq"
     },
     {
       "name": "📦⑧线┃秒播",
@@ -180,7 +180,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/AppV7Xsz"
+      "ext": "AppV7Xsz"
     },
     {
       "name": "📦⑨线┃秒播",
@@ -190,7 +190,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/AppV7Xhr"
+      "ext": "AppV7Xhr"
     },
     {
       "name": "📦师兄┃秒播",
@@ -200,7 +200,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/AppV7Dsx"
+      "ext": "AppV7Dsx"
     },
     {
       "name": "📦特狗┃秒播",
@@ -210,7 +210,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/AppV6Tg"
+      "ext": "AppV6Tg"
     },
     {
       "name": "☁️二小┃4K",
@@ -220,7 +220,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/exWobg"
+      "ext": "exWobg"
     },
     {
       "name": "☁️至臻┃4K",
@@ -230,7 +230,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/zzWobg"
+      "ext": "zzWobg"
     },
     {
       "name": "☁️闪电┃4K",
@@ -240,7 +240,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/yxWobg"
+      "ext": "yxWobg"
     },
     {
       "name": "☁️多多┃4K",
@@ -250,7 +250,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/ddWobg"
+      "ext": "ddWobg"
     },
     {
       "name": "☁️蜡笔┃4K",
@@ -260,7 +260,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/lbWobg"
+      "ext": "lbWobg"
     },
     {
       "name": "☁️虎斑┃4K",
@@ -270,7 +270,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/hbWobg"
+      "ext": "hbWobg"
     },
     {
       "name": "☁️观影┃4K",
@@ -280,7 +280,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/Gying"
+      "ext": "Gying"
     },
     {
       "name": "☁️盘链┃4K",
@@ -299,7 +299,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/SeedHub"
+      "ext": "SeedHub"
     },
     {
       "name": "☁️七味┃4K",
@@ -309,7 +309,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/Qiwei"
+      "ext": "Qiwei"
     },
     {
       "name": "☁️原盘┃4K",
@@ -319,7 +319,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/Zhinan"
+      "ext": "Zhinan"
     },
     {
       "name": "☁️Sek┃4K",
@@ -401,7 +401,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/Bidys"
+      "ext": "Bidys"
     },
     {
       "name": "🔗厂长┃2K",
@@ -411,7 +411,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/Czzy"
+      "ext": "Czzy"
     },
     {
       "name": "🔗LBV┃2K",
@@ -421,7 +421,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/Libvio"
+      "ext": "Libvio"
     },
     {
       "name": "🎬嗷嗚┃短剧",
@@ -497,18 +497,17 @@
       "name": "🧩橘汁┃快速",
       "key": "Woshinidie",
       "type": 3,
-      "jar": "https://zl.wpscdn.cn/2026/08/08/space_img/36332287-01c5-4b74-85f0-0cb070ddd57a.png;md5;0e457c08ca3c9fa3d949921cb73bb1f5",
+      "jar": "https://zl.wpscdn.cn/2026/09/09/space_img/980459c0-6c4a-4176-b726-2355e070e5d9.png;md5;27bd2800e2f603c4bebb91297ad64638",
       "api": "csp_Woshinidie",
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
       "ext": {
-        "abid": "2205",
-        "version": "http://www.英格里希嗷呜.top/3.0.2.3",
-        "pkg": "http://www.英格里希嗷呜.top/com.mxj.wylcjbxyx",
-        "md5": "http://www.英格里希嗷呜.top/090DA8F91D3F60CC6CB250D86F06FE12",
-        "sha1": "http://www.英格里希嗷呜.top/3DADB42485B7F864E766479ADA6B1176D81D8D73",
-        "site": "https://123-1349250429.cos.ap-shanghai.myqcloud.com/app.txt"
+        "version": "3.0.2.3",
+        "pkg": "com.mxj.wylcjbxyx",
+        "md5": "090DA8F91D3F60CC6CB250D86F06FE12",
+        "sha1": "3DADB42485B7F864E766479ADA6B1176D81D8D73",
+        "site": "https://oss-1372779881.cos.ap-guangzhou.myqcloud.com/ross.txt"
       }
     },
     {
@@ -528,7 +527,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/JPian"
+      "ext": "JPian"
     },
     {
       "name": "🧩热播┃快速",
@@ -538,7 +537,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/Rbys"
+      "ext": "Rbys"
     },
     {
       "name": "🧩杜北┃快速",
@@ -548,7 +547,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/Dubk"
+      "ext": "Dubk"
     },
     {
       "name": "🧩伊外┃快速",
@@ -638,7 +637,7 @@
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/GuaziLive"
+      "ext": "GuaziLive"
     },
     {
       "name": "🏆飞球┃体育",
@@ -657,7 +656,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
-      "ext": "http://www.英格里希嗷呜.top/BbkqLive"
+      "ext": "BbkqLive"
     },
     {
       "name": "🏆咖啡┃体育",
@@ -931,12 +930,12 @@
     {
       "name": "聚合1",
       "type": 3,
-      "url": "http://www.英格里希嗷呜.top/Demo"
+      "url": "Demo"
     },
     {
       "name": "聚合0",
       "type": 3,
-      "url": "http://www.英格里希嗷呜.top/Web"
+      "url": "Web"
     },
     {
       "name": "ikun",
