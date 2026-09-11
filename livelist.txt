@@ -1,13 +1,13 @@
-📡咪咕直播2|20260911|216B|http://27.18.216.122:55555|集多.json|
-📡咪咕直播3|20260911|128.1K|http://120.24.194.118:10002|集多.json|
-📡裤佬直播|20260911|531.8K|https://seep.eu.org/https://live.445569.xyz/live.m3u|集多.json|
-📡虎牙|20260911|205.7K|https://sub.ottiptv.cc/huyayqk.m3u|集多.json|
-📡斗鱼|20260911|174.0K|https://sub.ottiptv.cc/douyuyqk.m3u|集多.json|
-📡YY|20260911|111.7K|https://sub.ottiptv.cc/yylunbo.m3u|集多.json|
-📡BL|20260911|148.0K|https://sub.ottiptv.cc/bililive.m3u|集多.json|
-Guovin|20260911|387.1K|https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u|更新专用接口.json|
-Kimentanm|20260911|21.4K|https://gh.927223.xyz/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u|饭太硬.json|
-综合直播|20260911|41.9K|http://193.123.86.190:14888/TV/iptv.php|饭太硬.json|bingcha/1.1 (mianfeifenxiang)
-范明明（需开启V6网络）|20260911|12.5K|https://nos.netease.com/ysf/3d75a78a0fc7ede372c03598d6d10367.m3u|饭太硬.json|
+📡咪咕直播2|20260911|216B|http://27.18.216.122:55555|集多|
+📡咪咕直播3|20260911|128.1K|http://120.24.194.118:10002|集多|
+📡裤佬直播|20260911|376.5K|https://seep.eu.org/https://live.445569.xyz/live.m3u|集多|
+📡虎牙|20260911|204.3K|https://sub.ottiptv.cc/huyayqk.m3u|集多|
+📡斗鱼|20260911|173.3K|https://sub.ottiptv.cc/douyuyqk.m3u|集多|
+📡YY|20260911|114.8K|https://sub.ottiptv.cc/yylunbo.m3u|集多|
+📡BL|20260911|258.4K|https://sub.ottiptv.cc/bililive.m3u|集多|
+Guovin|20260911|387.1K|https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u|更新专用接口|
+Kimentanm|20260911|21.4K|https://gh.927223.xyz/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u|饭太硬|
+综合直播|20260911|41.9K|http://193.123.86.190:14888/TV/iptv.php|饭太硬|bingcha/1.1 (mianfeifenxiang)
+范明明（需开启V6网络）|20260911|12.5K|https://nos.netease.com/ysf/3d75a78a0fc7ede372c03598d6d10367.m3u|饭太硬|
+线路②|20260911|469B|https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt|星微Vip线|okHttp/Mod-1.1.0
 线路①|20260911|117.3K|http://rihou.cc:567/gggg.nzk|星微Vip线.json|okhttp/3
-线路②|20260911|469B|https://gh-proxy.com/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt|星微Vip线.json|okHttp/Mod-1.1.0
