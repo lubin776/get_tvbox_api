@@ -127,23 +127,7 @@ CCTV1综合|20260911|128K|http://example.com/cctv1.m3u|饭太硬.json|Mozilla/5.
 **三个工作流均配置**：
 - `concurrency: tvbox-repo-write`（串行 push，防冲突）
 - `permissions: contents: write`（允许提交）
-- 支持 `workflow_dispatch`（**可手动触发**，见下文）
-
-### ▶️ 手动运行（workflow_dispatch）
-
-三个工作流都开启了手动触发，可在 GitHub 网页上随时运行，无需等待定时：
-
-1. 进入仓库 → **Actions** 选项卡
-2. 左侧选择目标工作流（如 `两日一更备分接口`）
-3. 点击右侧 **Run workflow** 按钮
-4. 在弹出的表单中选择分支，并填写可选参数：
-   - **`force`**（强制执行）：跳过日期/频率限制，立即运行。
-     - 对 `2daytvboxapi.yml`：跳过"仅奇日"判断；
-     - 对 `rydaily.yml` / `livedownload.yml`：保留字段，供脚本内部使用。
-   - **`debug`**（详细日志）：脚本运行时输出详细调试信息，便于排查。
-5. 点击 **Run workflow** 即可立即执行
-
-> 💡 手动运行同样受 `concurrency` 串行控制，若其它工作流正在 push，会排队等待。
+- 支持 `workflow_dispatch`（手动触发）
 
 ### ⚙️ 部署前提（一次性设置）
 
@@ -167,22 +151,9 @@ python python/ry下载器.py --check-config
 # 调试模式（详细日志）
 python python/tvbox_get_api.py --debug
 
-# 强制执行（脚本侧，与网页手动触发的 force 对应）
-python python/ry下载器.py --force
-
 # 指定配置文件
 python python/tvbox_get_api.py --config /path/to/tvboxapilinks.txt
 ```
-
-**通用参数**（三个脚本均支持）：
-
-| 参数 | 作用 |
-|---|---|
-| `--debug` | 输出详细调试日志 |
-| `--force` | 强制执行（忽略频率/日期限制） |
-
-> `tvbox_get_api.py` 额外支持 `--check-config`（仅检查配置）、`--selftest`（自测）。
-> `ry下载器.py` 额外支持 `-l/--links "url1\|url2"`（手动传入链接，跳过配置文件）。
 
 > 脚本均在**仓库根目录**运行（工作流默认 CWD = 仓库根），确保 `tvbox/`、`ry/` 等相对路径正确解析。
 
@@ -204,16 +175,6 @@ A：`ry下载器.py` 会自动切换 UA 并重试；可在配置里增减镜像�
 
 **Q：`list.txt` / `livelist.txt` 路径不对？**
 A：两文件均应在**仓库根目录**。脚本用 `Path(__file__).resolve().parent.parent` 定位根，不受 CWD 影响。
-
----
-
-## 八、后续规划
-
-- [ ] 静态网页 `index.html` 展示（读取 `list.txt`，搜索 / 复制 / 多线）
-- [ ] 移动端适配 + 北京时间动态显示
-- [ ] 接口健康度检测（自动剔除失效源）
-
-> 当前版本聚焦采集核心，网页展示待后续接入。
 
 ---
 
