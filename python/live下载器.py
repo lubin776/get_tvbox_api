@@ -240,8 +240,9 @@ def generate_livelist(lives, results):
         if name not in results or not results[name][0]:
             continue
         _, size = results[name]
+        source = Path(live['source']).stem   # 去掉 .json 等后缀：集多.json -> 集多
         new_records[name] = (
-            f"{name}|{TODAY}|{format_file_size(size)}|{live['url']}|{live['source']}|{live.get('ua', '')}"
+            f"{name}|{TODAY}|{format_file_size(size)}|{live['url']}|{source}|{live.get('ua', '')}"
         )
 
     merged = {**old_records, **new_records}
