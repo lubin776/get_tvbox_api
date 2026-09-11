@@ -1,5 +1,5 @@
 {
-  "spider": "https://zl.wpscdn.cn/2026/09/11/space_img/00d57d76-d36a-4666-808a-9f53c4c133a3.png;md5;1b1fe32a75667040acdb5462f4ed822d",
+  "spider": "https://zl.wpscdn.cn/2026/09/11/space_img/96c38469-df36-433c-b400-74ed5e5a7d7a.png;md5;6b076a8a31e03cbfa5db73e079155629",
   "logo": "https://file.icve.com.cn/file_doc/945/35/EC508FBD046D33EC4832BB76B63B6C94.gif",
   "danmaku": "http://127.0.0.1:2525/danmu?name={name}&epid={episode}",
   "wallpaper": "http://127.0.0.1:9978/proxy?do=AowuWapper&mode=2",
@@ -16,7 +16,7 @@
       "ext": "http://www.英格里希嗷呜.top/Douban"
     },
     {
-      "name": "更新日期:【20260911】",
+      "name": "更新日期:【侏罗纪】",
       "key": "Y360",
       "type": 3,
       "api": "csp_Y360Amns",
