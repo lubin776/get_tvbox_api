@@ -460,6 +460,7 @@ def main():
         print(f"  {tag} {r['name'] or r['url']}  {extra}")
     print("=" * 50)
 
+    # 已成功的部分在此前已逐条落盘到 out_dir，即使存在失败项也会正常保留并提交。
     summary_path = os.path.join(out_dir, "_summary.json")
     try:
         with open(summary_path, "w", encoding="utf-8") as f:
@@ -471,7 +472,16 @@ def main():
     except Exception:
         pass
 
-    sys.exit(0 if ok_n == len(results) else 2)
+    # 退出码策略：
+    #   ok_n > 0  -> 0（部分/全部成功，产物已落盘，工作流标绿，push 正常执行）
+    #   ok_n == 0 -> 2（全部失败，工作流标红，便于告警）
+    # 不再因"个别链接失败（如 HTTP 418 反爬）"就把整次任务判为失败。
+    if ok_n > 0:
+        print(f"[done] {ok_n} succeeded, results saved to {out_dir}/")
+        if ok_n != len(results):
+            print("[warn] some links failed (see summary above); continuing as success")
+        sys.exit(0)
+    sys.exit(2)
 
 
 if __name__ == "__main__":
