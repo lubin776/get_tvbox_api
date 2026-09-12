@@ -8,11 +8,11 @@ Kimentanmm3u.txt|20260912|21.4K|https://gh.927223.xyz/https://raw.githubusercont
 YY轮播m3u.txt|20260912|113.5K|https://sub.ottiptv.cc/yylunbo.m3u|饭太硬5线|okHttp/Mod-1.5.0.0|
 咪咕直播2png.txt|20260912|27.7K|http://27.18.216.122:55555|集多|null|
 咪咕直播3txt.txt|20260912|128.1K|http://120.24.194.118:10002|集多|null|
-裤佬直播m3u.txt|20260912|379.0K|https://seep.eu.org/https://live.445569.xyz/live.m3u|集多|null|
+裤佬直播m3u.txt|20260912|531.0K|https://seep.eu.org/https://live.445569.xyz/live.m3u|集多|null|
 BLm3u.txt|20260912|28.6K|https://sub.ottiptv.cc/bililive.m3u|集多|null|
 Guovinm3u.txt|20260912|387.1K|https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u|更新专用接口|null|
 cluntopm3u.txt|20260912|1.4M|https://clun.top/lib/iptv.m3u|clun|null|
-cluntoptestm3u.txt|20260912|410.9K|https://clun.top/lib/iptv_test.m3u|clun|null|
+cluntoptestm3u.txt|20260912|412.0K|https://clun.top/lib/iptv_test.m3u|clun|null|
 歌手直播m3u.txt|20260912|72.4K|https://mgtv.ottiptv.cc/mglist.m3u|clun|okhttp/3.15|
 Kimentanm2线m3u.txt|20260912|21.4K|https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u|clun|null|
 Guovin1线m3u.txt|20260912|387.1K|https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u|clun|null|
@@ -23,7 +23,7 @@ Kimentanm3线m3u.txt|20260912|21.4K|https://gh.llkk.cc/https://raw.githubusercon
 线路nzk.txt|20260912|130.0K|http://rihou.cc:567/gggg.nzk|星微Vip|okhttp/3|
 手动不知何时更新txt.txt|20260912|663.8K|https://szyyds.cn/tv/live/x.txt|小马|null|
 有效期27年7月php.txt|20260912|6.8K|http://m.szyyds.cn/api.php?token=8664f352657e8b13585bcf0f84fc3512|小马|null|
-自动更新txt.txt|20260912|20.8K|https://z.szyyds.cn/iptv|小马|null|
+自动更新txt.txt|20260912|21.3K|https://z.szyyds.cn/iptv|小马|null|
 音乐所txt.txt|20260912|22.2M|https://szyyds.cn/tv/live/yy.txt|小马|null|
 Yoursmiletxt.txt|20260912|115.3K|https://gh-proxy.org/https://raw.githubusercontent.com/yoursmile66/TVBox/main/live.txt|南风|okhttp/3.15|
 livetxt.txt|20260912|258.5K|http://xhztv.top/xhz/live.txt|聚玩|okhttp/3.15|
@@ -34,7 +34,6 @@ livetxt.txt|20260912|258.5K|http://xhztv.top/xhz/live.txt|聚玩|okhttp/3.15|
 yuantxt.txt|20260912|137.9K|http://wangziduoqing.com/yuan/zb.txt|哈吉米|null|
 应该能看txt.txt|20260912|233.8K|https://gh-proxy.org/raw.githubusercontent.com/vinkerq/iptv-api/refs/heads/master/iptv.txt|哈吉米|null|
 全球jpg.txt|20260912|13B|http://xingioe.top/down.php/82d0754d79de3be03e9b63e4d2d96818.jpg|哈吉米|null|
-尘墨php.txt|20260912|11.7K|https://52xiaobai.cn/ceshi/zb.php|哈吉米|null|
 develop2021线txt.txt|20260912|92.3K|https://ztha.top/TVBox/lib/interface.txt|挺好|null|
 Kimentanm5线m3u.txt|20260912|21.4K|https://ztha.top/TVBox/lib/iptv.m3u|挺好|null|
 挺好直播txt.txt|20260912|4.6K|https://ztha.top/TVBox/tv/thtv.txt|挺好|null|
@@ -60,7 +59,7 @@ Kimentanmm3u|20260912|21.4K|https://gh.927223.xyz/https://raw.githubusercontent.
 斗鱼一起看m3u|20260912|172.5K|https://sub.ottiptv.cc/douyuyqk.m3u|饭太硬5线|okHttp/Mod-1.5.0.0|
 YY轮播m3u|20260912|114.3K|https://sub.ottiptv.cc/yylunbo.m3u|饭太硬5线|okHttp/Mod-1.5.0.0|
 咪咕直播2png|20260912|27.7K|http://27.18.216.122:55555|集多|null|
-咪咕直播3|20260912|128.1K|http://120.24.194.118:10002|集多|null|
+咪咕直播3txt.txt|20260912|128.1K|http://120.24.194.118:10002|集多|null|
 裤佬直播m3u|20260912|530.9K|https://seep.eu.org/https://live.445569.xyz/live.m3u|集多|null|
 BLm3u|20260912|50.0K|https://sub.ottiptv.cc/bililive.m3u|集多|null|
 Guovinm3u|20260912|387.1K|https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u|更新专用接口|null|
@@ -76,6 +75,7 @@ Kimentanm3线m3u|20260912|21.4K|https://gh.llkk.cc/https://raw.githubusercontent
 线路nzk|20260912|130.0K|http://rihou.cc:567/gggg.nzk|星微Vip|okhttp/3|
 手动不知何时更新txt|20260912|663.8K|https://szyyds.cn/tv/live/x.txt|小马|null|
 有效期27年7月php|20260912|6.8K|http://m.szyyds.cn/api.php?token=8664f352657e8b13585bcf0f84fc3512|小马|null|
+自动更新txt.txt|20260912|20.8K|https://z.szyyds.cn/iptv|小马|null|
 音乐所txt|20260912|22.2M|https://szyyds.cn/tv/live/yy.txt|小马|null|
 Yoursmiletxt|20260912|115.3K|https://gh-proxy.org/https://raw.githubusercontent.com/yoursmile66/TVBox/main/live.txt|南风|okhttp/3.15|
 livetxt|20260912|258.5K|http://xhztv.top/xhz/live.txt|聚玩|okhttp/3.15|
@@ -86,6 +86,7 @@ livetxt|20260912|258.5K|http://xhztv.top/xhz/live.txt|聚玩|okhttp/3.15|
 yuantxt|20260912|137.9K|http://wangziduoqing.com/yuan/zb.txt|哈吉米|null|
 应该能看txt|20260912|233.8K|https://gh-proxy.org/raw.githubusercontent.com/vinkerq/iptv-api/refs/heads/master/iptv.txt|哈吉米|null|
 全球jpg|20260912|13B|http://xingioe.top/down.php/82d0754d79de3be03e9b63e4d2d96818.jpg|哈吉米|null|
+尘墨php.txt|20260912|11.7K|https://52xiaobai.cn/ceshi/zb.php|哈吉米|null|
 develop2021线txt|20260912|92.3K|https://ztha.top/TVBox/lib/interface.txt|挺好|null|
 Kimentanm5线m3u|20260912|21.4K|https://ztha.top/TVBox/lib/iptv.m3u|挺好|null|
 挺好直播txt|20260912|4.6K|https://ztha.top/TVBox/tv/thtv.txt|挺好|null|
@@ -97,8 +98,11 @@ MVtxt|20260912|2.1M|https://ztha.top/TVBox/tv/MV.txt|挺好|null|
 B站直播m3u|20260912|27.6K|https://ztha.top/TVBox/lib/bililive.m3u|挺好|okHttp/Mod-1.5.0.0|
 YY轮播1线m3u|20260912|122.6K|https://ztha.top/TVBox/lib/yylunbo.m3u|挺好|okHttp/Mod-1.5.0.0|
 Kimentanm6线m3u|20260912|21.4K|https://ghfast.top/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u|王二小3线|null|
-移动|20260912|22.4K|https://gh-proxy.com/raw.githubusercontent.com/zhoujck/config/main/ext/移动|周J|okhttp/3.15|
-联通|20260912|15.2K|https://gh-proxy.com/raw.githubusercontent.com/zhoujck/config/main/ext/联通|周J|okhttp/3.15|
+移动txt.txt|20260912|22.4K|https://gh-proxy.com/raw.githubusercontent.com/zhoujck/config/main/ext/移动|周J|okhttp/3.15|
+联通txt.txt|20260912|15.2K|https://gh-proxy.com/raw.githubusercontent.com/zhoujck/config/main/ext/联通|周J|okhttp/3.15|
 优选txt|20260912|15.2K|https://gh-proxy.com/raw.githubusercontent.com/zhoujck/config/main/ext/live.txt|周J|okhttp/3.15|
 范明明m3u|20260912|24.6K|https://live.fanmingming.cn/tv/m3u/ipv6.m3u|真六|null|
 APTVm3u|20260912|21.4K|https://wget.la/https://github.com/Kimentanm/aptv/raw/master/m3u/iptv.m3u|真六|okhttp/3.15,AptvPlayer/1.4.0|
+咪咕直播3|20260912|128.1K|http://120.24.194.118:10002|集多|null|
+移动|20260912|22.4K|https://gh-proxy.com/raw.githubusercontent.com/zhoujck/config/main/ext/移动|周J|okhttp/3.15|
+联通|20260912|15.2K|https://gh-proxy.com/raw.githubusercontent.com/zhoujck/config/main/ext/联通|周J|okhttp/3.15|
