@@ -1,5 +1,5 @@
 {
-  "spider": "http://xz.rihou.cc:88/xz/api.php/vox.jar;md5;88871b715887299b327b35d4e5dd4d16",
+  "spider": "http://xz.rihou.cc:88/xz/api.php/vox.jar;md5;2ed2a6be7965e60313a7a892b1e89c96",
   "README": "http://rihou.cc:88/README.txt",
   "warningText": "禁止任何商业用途，仅限个人学习爬虫原理使用。",
   "logo": "http://rihou.cc:88/1.gif",
@@ -244,21 +244,6 @@
       }
     },
     {
-      "key": "csp_PingLian",
-      "name": "😃盘链┃[网盘]",
-      "type": 3,
-      "api": "csp_PingLian",
-      "searchable": 1,
-      "changeable": 1,
-      "timeout": 60,
-      "ext": {
-        "cookie": "",
-        "filters": "http://rihou.cc:88/json/pinglian.json",
-        "sites": "https://pinglian.lol",
-        "proxy": "http://rihou.cc:88/noproxy"
-      }
-    },
-    {
       "key": "123社区",
       "name": "🥉社区┃[网盘]",
       "type": 3,
@@ -400,21 +385,6 @@
       }
     },
     {
-      "key": "蜡笔网盘",
-      "name": "🤩蜡笔┃[网盘]",
-      "type": 3,
-      "api": "csp_Wobg",
-      "searchable": 1,
-      "filterable": 1,
-      "changeable": 1,
-      "timeout": 60,
-      "ext": {
-        "sites": "http://tvpanpan.site",
-        "filters": "http://rihou.cc:88/json/wogg2.json",
-        "proxy": "http://rihou.cc:88/noproxy"
-      }
-    },
-    {
       "key": "闪电网盘",
       "name": "🤑闪电┃[网盘]",
       "type": 3,
@@ -455,21 +425,6 @@
       "timeout": 60,
       "ext": {
         "sites": "https://123.666291.xyz",
-        "filters": "http://rihou.cc:88/json/wogg2.json",
-        "proxy": "http://rihou.cc:88/noproxy"
-      }
-    },
-    {
-      "key": "至臻网盘",
-      "name": "🤫至臻┃[网盘]",
-      "type": 3,
-      "api": "csp_Wobg",
-      "searchable": 1,
-      "filterable": 1,
-      "changeable": 1,
-      "timeout": 60,
-      "ext": {
-        "sites": "https://www.mihdr.top",
         "filters": "http://rihou.cc:88/json/wogg2.json",
         "proxy": "http://rihou.cc:88/noproxy"
       }
@@ -699,12 +654,6 @@
       "type": 3,
       "api": "http://rihou.cc:88/js/drpy2.min.js",
       "ext": "http://rihou.cc:88/js/泥泥视频.js"
-    },
-    {
-      "key": "星辰影院",
-      "name": "🪐星辰┃[秒播]",
-      "type": 3,
-      "api": "http://rihou.cc:88/js/星辰影院.js"
     },
     {
       "key": "官采",
