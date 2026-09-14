@@ -41,6 +41,29 @@ def today_str():
     return beijing_now().strftime("%Y%m%d")
 
 
+def run_date(list_path=None):
+    """本次运行写入 list.txt 所使用的日期。
+
+    - 显式指定了 --date：优先使用（手动/自动皆可指定）
+    - 手动模式 (--manual) 且 list.txt 已有记录：沿用其中最新日期，避免刷新日期
+      打乱「每两日一次」的自动节奏
+    - 其余情况（含自动模式）：使用今天
+    """
+    if list_path is None:
+        list_path = LIST_TXT
+    if ARGS.date:
+        return ARGS.date
+
+    if ARGS.manual:
+        old = load_list_txt(list_path)
+        if old:
+            latest = max((rec[0] for rec in old.values() if rec and rec[0]), default="")
+            if latest:
+                return latest
+
+    return today_str()
+
+
 # ---------- 简化文本配置解析（核心新增） ----------
 def _load_txt_api_list(txt_path):
     """从 rylinks.txt 风格的文件加载 API_LIST + API_MIRRORS"""
@@ -160,6 +183,11 @@ parser.add_argument("--debug", action="store_true", help="输出详细调试日�
 parser.add_argument("--force", action="store_true", help="强制执行（工作流手动触发时使用）")
 parser.add_argument("--check-config", action="store_true", help="仅检查配置，不抓取")
 parser.add_argument("--selftest", action="store_true", help="自测模式")
+parser.add_argument("--manual", action="store_true",
+                    help="手动触发模式：本次运行不刷新 list.txt 的日期，避免打乱两日自动节奏；"
+                         "未指定 --date 时沿用 list.txt 中已有日期")
+parser.add_argument("--date", metavar="YYYYMMDD", default=None,
+                    help="指定写入 list.txt 的日期（默认=今天）；手动模式下可显式指定")
 ARGS, _ = parser.parse_known_args()
 DEBUG = ARGS.debug
 
@@ -680,7 +708,7 @@ def save_list_txt(latest, path=LIST_TXT):
 
 
 def update_list_txt(results, path=LIST_TXT):
-    today = today_str()
+    today = run_date(path)
     old = load_list_txt(path)
 
     new_by_key = {}
@@ -989,8 +1017,11 @@ def main():
     ts = beijing_now().strftime("%Y%m%d_%H%M%S")
     summary = []
 
+    mode = "MANUAL" if ARGS.manual else "AUTO"
     print("=" * 62)
     print(f"  TVBox API fetcher  {ts}")
+    print(f"  mode={mode}  run_date={run_date()}  today={today_str()}"
+          + ("  (--date override)" if ARGS.date else ""))
     print("=" * 62)
 
     old = load_list_txt(LIST_TXT)
@@ -1056,4 +1087,6 @@ if __name__ == "__main__":
         print(f"  total {len(API_LIST)} interfaces")
         print("=" * 62)
     else:
+        # 手动 / 自动最终都走 main()；行为差异由 ARGS.manual / ARGS.date 在内部控制，
+        # 因此这里无需额外分支，--manual 可随时单独调用。
         main()
