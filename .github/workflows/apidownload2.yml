@@ -11,6 +11,12 @@ on:
         default: "false"
         type: choice
         options: ["false", "true"]
+      force:
+        description: "强制运行（忽略两日 gate）"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
 
 concurrency:
   group: tvbox-repo-write
@@ -34,25 +40,38 @@ jobs:
       - name: 安装依赖
         run: pip install requests
 
-      - name: 奇偶日 gate（每两日执行）
+      - name: 奇偶日 gate（每两日执行，手动可绕过）
         id: gate
         run: |
+          # 手动触发 → 永远放行
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            echo "gate=manual" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # 定时触发 → 按 UTC 日期奇偶
           DAY=$(date -u +%d)
           if [ $((10#$DAY % 2)) -eq 0 ]; then
-            echo "should_run=false" >> $GITHUB_OUTPUT
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+            echo "gate=auto-even-skip" >> "$GITHUB_OUTPUT"
           else
-            echo "should_run=true" >> $GITHUB_OUTPUT
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            echo "gate=auto-odd-run" >> "$GITHUB_OUTPUT"
           fi
 
       - name: 运行脚本
         working-directory: ${{ github.workspace }}
         if: steps.gate.outputs.should_run == 'true'
         run: |
+          ARGS=""
           if [ "${{ github.event.inputs.debug }}" = "true" ]; then
-            python python/apidownload2.py --debug
-          else
-            python python/apidownload2.py
+            ARGS="$ARGS --debug"
           fi
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            ARGS="$ARGS --force"
+          fi
+          python python/apidownload2.py $ARGS
 
       - name: 提交结果
         if: steps.gate.outputs.should_run == 'true'
@@ -61,7 +80,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add tvbox/ list.txt SUMMARY.txt tvboxapilinks.txt || true
           if git diff --cached --quiet; then echo "无变更"; exit 0; fi
-          git commit -m "chore: 每两日自动抓取更新 ($(date -u +%Y-%m-%d))"
+          git commit -m "chore: 每两日自动抓取更新 ($(date -u +%Y-%m-%d)) gate=${{ steps.gate.outputs.gate }}"
           git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
         env:
