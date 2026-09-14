@@ -1,9 +1,9 @@
 [
   {
-    "name": "æ¨è",
+    "name": "推荐",
     "list": [
       {
-        "name": "å³äº",
+        "name": "关于",
         "url": "",
         "icon": "https://pic7.fukit.cn/autoupload/gE6Y0Af2tjXBCNig6CtNDI12_FRYNb81z6UPhMWD8iI/20251224/dJkT/1080X1080/logo.jpg",
         "version": " "
@@ -11,17 +11,17 @@
     ]
   },
   {
-    "name": "æ¬å°å",
+    "name": "本地包",
     "list": [
       {
-        "name": "å½åçæ¬",
+        "name": "当前版本",
         "url": "",
-        "icon": "http://127.0.0.1:9978/file/TVBoxOSC/tvbox/.çæ¬.png",
+        "icon": "http://127.0.0.1:9978/file/TVBoxOSC/tvbox/.版本.png",
         "version": ""
       },
       {
-        "name": "ç¹å»ä¸è½½",
-        "url": "https://pizazz.us.ci/åçº¿è·¯.zip",
+        "name": "点击下载",
+        "url": "https://pizazz.us.ci/单线路.zip",
         "icon": "https://pic7.fukit.cn/autoupload/gE6Y0Af2tjXBCNig6CtNDI12_FRYNb81z6UPhMWD8iI/20251224/UwcH/800X800/single.png/webp",
         "version": "version"
       }
