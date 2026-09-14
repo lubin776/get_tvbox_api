@@ -41,27 +41,71 @@ def today_str():
     return beijing_now().strftime("%Y%m%d")
 
 
-def run_date(list_path=None):
-    """本次运行写入 list.txt 所使用的日期。
-
-    - 显式指定了 --date：优先使用（手动/自动皆可指定）
-    - 手动模式 (--manual) 且 list.txt 已有记录：沿用其中最新日期，避免刷新日期
-      打乱「每两日一次」的自动节奏
-    - 其余情况（含自动模式）：使用今天
+# ---------- 运行模式与两日间隔判定 ----------
+def is_auto_run():
+    """是否为 GitHub Actions 的定时自动运行。
+    schedule 触发时 GITHUB_EVENT_NAME= schedule；手动触发（workflow_dispatch）时为 'workflow_dispatch'。
     """
-    if list_path is None:
-        list_path = LIST_TXT
-    if ARGS.date:
-        return ARGS.date
+    return os.environ.get("GITHUB_EVENT_NAME") == "schedule"
 
+
+def is_manual_run():
+    """是否为手动触发。支持三种来源：
+      1. CLI --manual
+      2. 环境变量 MANUAL_RUN=1 / true
+      3. GitHub Actions workflow_dispatch（非 schedule）
+    """
     if ARGS.manual:
-        old = load_list_txt(list_path)
-        if old:
-            latest = max((rec[0] for rec in old.values() if rec and rec[0]), default="")
-            if latest:
-                return latest
+        return True
+    if os.environ.get("MANUAL_RUN", "").strip().lower() in ("1", "true", "yes"):
+        return True
+    event = os.environ.get("GITHUB_EVENT_NAME", "").strip()
+    if event and event != "schedule":
+        return True
+    return False
 
-    return today_str()
+
+def latest_run_date(path=None):
+    """读取 list.txt，返回最近一次运行日期（YYYYMMDD 字符串），无记录则返回 None。"""
+    if path is None:
+        path = LIST_TXT
+    old = load_list_txt(path)
+    dates = [rec[0] for rec in old.values() if rec and rec[0]]
+    return max(dates) if dates else None
+
+
+def should_skip_for_interval(interval_days):
+    """手动运行时检查两日节奏：若距上次运行不足 interval_days 天，应跳过。
+    自动运行（schedule）不受限制；显式 --force 不受限制。
+    """
+    if ARGS.force:
+        return False
+    if is_auto_run():
+        return False
+    if not is_manual_run():
+        # 本地直接跑，当作自动，不跳过
+        return False
+
+    last = latest_run_date(LIST_TXT)
+    if not last:
+        return False  # 首次运行，不跳过
+    try:
+        last_dt = datetime.strptime(last, "%Y%m%d").astimezone(timezone(timedelta(hours=8)))
+    except ValueError:
+        return False
+    now_dt = beijing_now()
+    elapsed_days = (now_dt - last_dt).total_seconds() / 86400.0
+    return elapsed_days < interval_days
+
+
+def run_mode():
+    if ARGS.force:
+        return "FORCED"
+    if is_auto_run():
+        return "AUTO"
+    if is_manual_run():
+        return "MANUAL"
+    return "LOCAL"
 
 
 # ---------- 简化文本配置解析（核心新增） ----------
@@ -180,14 +224,11 @@ if HAVE_REQUESTS:
 # ---------- 调试开关 ----------
 parser = argparse.ArgumentParser(description="TVBox 接口抓取与备份")
 parser.add_argument("--debug", action="store_true", help="输出详细调试日志")
-parser.add_argument("--force", action="store_true", help="强制执行（工作流手动触发时使用）")
+parser.add_argument("--force", action="store_true", help="强制执行，跳过两日间隔检查")
+parser.add_argument("--manual", action="store_true", help="声明本次为手动触发（用于两日节奏判定）")
+parser.add_argument("--interval-days", type=int, default=2, help="两次运行的最小间隔天数（默认 2）")
 parser.add_argument("--check-config", action="store_true", help="仅检查配置，不抓取")
 parser.add_argument("--selftest", action="store_true", help="自测模式")
-parser.add_argument("--manual", action="store_true",
-                    help="手动触发模式：本次运行不刷新 list.txt 的日期，避免打乱两日自动节奏；"
-                         "未指定 --date 时沿用 list.txt 中已有日期")
-parser.add_argument("--date", metavar="YYYYMMDD", default=None,
-                    help="指定写入 list.txt 的日期（默认=今天）；手动模式下可显式指定")
 ARGS, _ = parser.parse_known_args()
 DEBUG = ARGS.debug
 
@@ -708,7 +749,7 @@ def save_list_txt(latest, path=LIST_TXT):
 
 
 def update_list_txt(results, path=LIST_TXT):
-    today = run_date(path)
+    today = today_str()
     old = load_list_txt(path)
 
     new_by_key = {}
@@ -1017,12 +1058,20 @@ def main():
     ts = beijing_now().strftime("%Y%m%d_%H%M%S")
     summary = []
 
-    mode = "MANUAL" if ARGS.manual else "AUTO"
     print("=" * 62)
     print(f"  TVBox API fetcher  {ts}")
-    print(f"  mode={mode}  run_date={run_date()}  today={today_str()}"
-          + ("  (--date override)" if ARGS.date else ""))
+    print(f"  mode={run_mode()}  force={ARGS.force}  today={today_str()}  interval_days={ARGS.interval_days}")
     print("=" * 62)
+
+    # ---- 两日节奏跳过检查（手动触发自动跳过）----
+    if should_skip_for_interval(ARGS.interval_days):
+        last = latest_run_date(LIST_TXT)
+        print("")
+        print(f"  SKIP: manual run within {ARGS.interval_days}-day interval.")
+        print(f"        last run date = {last}, today = {today_str()}")
+        print(f"        use --force to run anyway.")
+        print("=" * 62)
+        return
 
     old = load_list_txt(LIST_TXT)
     if old:
@@ -1087,6 +1136,4 @@ if __name__ == "__main__":
         print(f"  total {len(API_LIST)} interfaces")
         print("=" * 62)
     else:
-        # 手动 / 自动最终都走 main()；行为差异由 ARGS.manual / ARGS.date 在内部控制，
-        # 因此这里无需额外分支，--manual 可随时单独调用。
         main()
